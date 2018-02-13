@@ -1,0 +1,104 @@
+
+/* Header */
+
+.user-img {
+    height: 30px;
+    width: 30px;
+    margin-right: 5px;
+}
+/* Other */
+
+button{
+    margin-right: 5px;
+}
+
+.panel {
+    border: none;
+    min-height: 460px;
+}
+
+.panel-heading {
+    padding: 20px 15px;
+    border: none;
+}
+
+.panel-footer {
+    padding: 5px 15px;
+    border : none;
+}
+nav ul li{
+    font-size: larger;
+}
+
+/* Profile */
+
+.profile-img{
+    height: 150px;
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+.profile-name{
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.profile-etat{
+    margin-bottom: 15px;
+}
+
+.profile-button{
+    margin-bottom: 15px;
+}
+
+
+/* Publication Content */
+.profile-post {
+text-decoration: none;
+}
+
+/* Blog Content */
+ .blog-articles {
+    padding: 0 10px;
+    border:2px dashed #dadada;
+}
+
+/* Comment Content */
+
+.comment{
+    margin-bottom: 1.25rem;
+    display: table;
+    width: 100%;
+    min-height: 5.3125rem;
+}
+.comment-img {
+    padding-top: 0.625rem;
+    display: table-cell;
+    width: 50px;
+}
+.comment-img img{
+    height: 50px;
+    width: 50px;
+}
+
+.comment-block {
+    padding: 1rem;
+    display: table-cell;
+    vertical-align: top;
+}
+.comment-block input{
+    width: 100%;
+    resize: none;
+}
+
+.comment-button {
+    padding-bottom: 0.625rem;
+    display: table-cell;
+    width: 100px;
+
+}
+.comment-button button{
+    width: auto;
+}
+
+
