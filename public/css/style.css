@@ -2,8 +2,8 @@
 /* Header */
 
 .user-img {
-    height: 30px;
-    width: 30px;
+    height: 20px;
+    width: 20px;
     margin-right: 5px;
 }
 /* Other */
@@ -14,7 +14,6 @@ button{
 
 .panel {
     border: none;
-    min-height: 460px;
 }
 
 .panel-heading {
@@ -54,13 +53,19 @@ nav ul li{
 
 /* Publication Content */
 .profile-post {
-text-decoration: none;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    border:2px dashed #dadada;
 }
+
+
 
 /* Blog Content */
  .blog-articles {
     padding: 0 10px;
+     margin-bottom: 10px;
     border:2px dashed #dadada;
+     min-height: 200px;
 }
 
 /* Comment Content */
@@ -71,6 +76,14 @@ text-decoration: none;
     width: 100%;
     min-height: 5.3125rem;
 }
+
+.comments{
+    margin: 20px 40px;
+    display: table;
+    width: 100%;
+    min-height: 5.3125rem;
+}
+
 .comment-img {
     padding-top: 0.625rem;
     display: table-cell;
@@ -87,18 +100,26 @@ text-decoration: none;
     vertical-align: top;
 }
 .comment-block input{
-    width: 100%;
+    width: 82%;
     resize: none;
-}
-
-.comment-button {
-    padding-bottom: 0.625rem;
-    display: table-cell;
-    width: 100px;
+    display: inline-block;
 
 }
-.comment-button button{
-    width: auto;
+
+.comment-block button {
+    display: inline-block;
+    width: 15%;
 }
 
+.well {
+    width: 82%;
+    resize: none;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.delete {
+    display: inline-block;
+    width: 15%;
+}
 

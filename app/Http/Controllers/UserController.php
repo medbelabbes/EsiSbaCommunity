@@ -22,7 +22,7 @@ class UserController extends Controller
 
     public function show(User $user)
     {
-        return view('profile.index')->with('user', $user);
+        return view('profile.information')->with('user', $user);
     }
 
     /**

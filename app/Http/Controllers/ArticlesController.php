@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Article;
 use Illuminate\Support\Facades\Redirect;
+use View;
+use App\Comment;
 
 use Auth;
 
@@ -30,8 +32,9 @@ class ArticlesController extends Controller
     public function show($user_id, $id )
     {
         $user = User::findOrFail($user_id);
-        $article= Article::findOrFail($id);
-        return view('profile.blog.show',  ['user'=>$user,'article'=>$article]);
+        $article = Article::findOrFail($id);
+        $comments = $article->comments()->OrderBy('created_at','desc')->paginate(5);
+        return View::make('profile.blog.show',['user'=>$user,'comments'=>$comments, 'article'=>$article]);
     }
 
 

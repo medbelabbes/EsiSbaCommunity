@@ -35,6 +35,7 @@ Route::prefix('/profile')->group(function() {
         Route::get('/{article}', 'ArticlesController@show');
         Route::post('/store', 'ArticlesController@store');
         Route::post('/update', 'ArticlesController@update');
+        Route::post('/{article}/comment', 'CommentsController@store');
         Route::delete('/{article}/destroy', 'ArticlesController@destroy');
 
 
@@ -57,4 +58,10 @@ Route::prefix('/profile')->group(function() {
 
 
 Route::resource('/profile/invitationmail','InvitationmailsController');
+
+Route::delete('/{comment}/destroy', 'CommentsController@destroy');
+
+
+
+
 

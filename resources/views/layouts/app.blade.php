@@ -31,16 +31,20 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand"  href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
+                    @if(Auth::user())
+
+                        <ul class="nav navbar-nav" >
+                            <li><a href="{{ url('/home') }}">Accueil</a></li>
+                            <li><a href="{{ url('/profile/'.Auth::User()->id) }}">Profile</a></li>
+                        </ul>
+                    @endif
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
@@ -56,7 +60,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu">
-                                    <li><a href="/profile/{{ Auth::user()->id }}/edit/">Paramètres du compte</a></li>
+                                    <li><a href="/profile/parametres/">Paramètres du compte</a></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();

@@ -19,21 +19,10 @@
                         {!! $article->content !!}
                     </div>
 
-                    <div class="panel-footer">
-                        <div class="comment">
-                            <div class="comment-img">
-                                <img src="/images/{{ $user->photo }}" class="img-circle img-thumbnail"/>
-                            </div>
-                            <div class="comment-block">
-                                <form action="">
-                                    <input type="text" class="form-control" placeholder="Entrer votre commentaire">
-                                </form>
-                            </div>
-                            <div class="comment-button">
-                                <button type="submit" class="btn btn-primary">Commenter</button>
-                            </div>
-                         </div>
-                    </div>
+
+                        <!-- Commentaires -->
+                        @include('profile/blog/comment')
+
 
                  <!-- Modifier Article -->
                  @include('profile/blog/edit')

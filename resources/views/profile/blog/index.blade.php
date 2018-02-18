@@ -16,10 +16,14 @@
 
                                 <h3>{{$article->titre}}</h3>
 
-                                <p> {{ substr(strip_tags($article->content), 0, 250) }}{{ strlen(strip_tags($article->content)) > 250 ? '...' : "" }}<a href="">Lire la suite</a></p>
-                                <p>
-                                <small><i class="fa fa-facebook " aria-hidden="true"></i> Nbr coms</small>
-                                <small class="pull-right">Publié le : {{ date('d F Y', strtotime($article->created_at)) }}</small> </p>
+                                <p> {{ substr(strip_tags($article->content), 0, 200) }}{{ strlen(strip_tags($article->content)) > 250 ? '...' : "" }}
+                                    <a href="{{ url('/profile/'.$user->id.'/blog/'.$article->id) }}">
+                                        Lire la suite
+                                    </a>
+                                </p>
+
+                                <small><i class="fas fa-comments"></i> {{count($article->comments)}}</small>
+                                <small class="pull-right">Publié le : {{ date('d F Y', strtotime($article->created_at)) }}</small>
 
                             </div>
                         </div>

@@ -12,16 +12,26 @@
                             <div class="col-md-12">
                                 @if(count($posts)>0)
                                     @foreach($posts as $post)
-                                        <a href="{{ url('/profile/'.$user->id.'/publications/'.$post->id) }}">
-                                            <div class="profile-post well">
-                                                {{$post->content}}
-                                            </div>
-                                        </a>
+
+                                        <div class="col-md-12">
+
+                                               <div class="profile-post">
+                                                   <p style="text-decoration: none">  <a href="{{ url('/profile/'.$user->id.'/blog/'.$post->id) }}"> {{$post->content}}</a>
+                                                   </p>
+
+                                                       <small><i class="fas fa-comments"></i> {{count($post->comments)}}</small>
+                                                       <small class="pull-right">Publié le : {{ date('d F Y', strtotime($post->created_at)) }}</small>
+                                               </div>
+                                           </a>
+
+                                        </div>
+
                                     @endforeach
                                     @endif
                         </div>
                     </div>
                     <div class="panel-footer">
+                        {{$posts->links()}}
 
                     </div>
 

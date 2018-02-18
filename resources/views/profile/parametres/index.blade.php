@@ -10,7 +10,7 @@
             <div class="col-md-9">
 
                 <div class="row">
-                    <div class="profile-content tab-content">
+                    <div class="panel tab-content">
                         <!-- Information général -->
                         @include('profile/parametres/information')
                     <!-- Information général -->

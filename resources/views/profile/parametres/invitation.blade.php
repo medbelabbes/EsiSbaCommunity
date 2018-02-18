@@ -1,6 +1,10 @@
 <div role="tabpanel" class="tab-pane" id="invitationmails">
 
-    <div class="col-md-12">
+    <div class="panel-heading">
+        <h3 class="panel-title">Invitation par email</h3>
+    </div>
+
+    <div class="col-md-12 panel-body">
         <form class="form-inline" method="POST" action="{{ url('/profile/mail/send') }}">
             {{ csrf_field() }}
             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -14,15 +18,18 @@
             </div>
             <button type="submit" class="btn btn-default">Envoyer</button>
         </form>
+<br/>
+        <div class="col-md-12 text-center">
+            @foreach(Auth::User()->invitationmail as $invitation)
+                <div class="well">
+                    {{ $invitation->email }}
+                </div>
+            @endforeach
+        </div>
+
+
     </div>
 
-    <div class="row">
-        @foreach(Auth::User()->invitationmail as $invitation)
-            <div class="col-md-6">
-                {{ $invitation->email }}
-            </div>
-        @endforeach
-    </div>
 
 
 
