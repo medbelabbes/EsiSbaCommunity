@@ -32,9 +32,15 @@ class User extends Authenticatable
         return $this->hasMany('App\Invitationmail');
     }
 
+
     public function article()
     {
         return $this->hasMany('App\Article');
+    }
+
+    public function groupe()
+    {
+        return $this->hasMany('App\Groupe');
     }
 
     public function post()
@@ -45,5 +51,17 @@ class User extends Authenticatable
     public function comment()
     {
         return $this->hasMany('App\Comment');
+    }
+
+    public function invitations(){
+        return $this->hasMany("App\invitation");
+    }
+
+    public function amies(){
+        return $this->hasMany("App\amie");
+    }
+
+    public function notification(){
+        return $this->hasMany('App\notification');
     }
 }

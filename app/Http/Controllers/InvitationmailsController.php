@@ -26,6 +26,10 @@ class InvitationmailsController extends Controller
 
     public function send(Request $request)
     {
+
+        $this->validate($request,['email' => 'required|email|max:255|regex:/(.*)@esi-sba.dz/i|unique:invitationmails',]);
+
+
         $user = Auth::User();
         $email = $request->input('email');
         $invit = new Invitationmail;

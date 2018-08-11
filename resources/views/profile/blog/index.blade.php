@@ -5,8 +5,11 @@
 
 
                     <div class="panel-heading">
+                        @if($user->id == Auth::User()->id )
                         <button type="button" class="pull-right btn btn-success btn-sm" data-toggle="modal" data-target="#myModal"><i class="fas fa-pencil-alt"></i> Ajouter un article</button>
-                        <h3 class="panel-title">Blog</h3>
+                        @endif
+
+                            <h3 class="panel-title">Blog</h3>
                     </div>
                     <div class="panel-body">
                         @if(count($articles)>0)
@@ -22,7 +25,7 @@
                                     </a>
                                 </p>
 
-                                <small><i class="fas fa-comments"></i> {{count($article->comments)}}</small>
+                                <small><i class="fas fa-comments"></i> {{count($article->comments)}} <i class="fas fa-arrow-alt-circle-up" style="color: #2ab27b"></i> {{count_up($article->id)}} <i class="fas fa-arrow-alt-circle-down" style="color: #bf5329"></i> {{count_down($article->id)}}</small>
                                 <small class="pull-right">Publié le : {{ date('d F Y', strtotime($article->created_at)) }}</small>
 
                             </div>

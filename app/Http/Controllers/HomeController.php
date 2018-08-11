@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Post;
+use App\Article;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $posts= Post::orderBy('created_at','desc')->simplePaginate(4);
+        $articles= Article::orderBy('created_at','desc')->simplePaginate(4);
+
+
+
+        return view('home', ['articles'=>$articles,'posts'=>$posts]);
     }
 }

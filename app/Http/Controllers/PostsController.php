@@ -29,7 +29,8 @@ class PostsController extends Controller
     {
         $user = User::findOrFail($user_id);
         $post= Post::findOrFail($id);
-        return view('profile.post.show',  ['user'=>$user,'post'=>$post]);
+        $comments = $post->comments()->OrderBy('created_at','desc')->paginate(5);
+        return view('profile.post.show',  ['user'=>$user,'post'=>$post,'comments'=>$comments]);
     }
 
     public function store(Request $request)

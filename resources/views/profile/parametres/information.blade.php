@@ -88,9 +88,9 @@
                             <div class="col-md-12">
 
                                 <label for="sexe"  class="control-label">Sexe</label>
-                                <select id="sexe"  value="{{ Auth::user()->sexe }}" name="sexe" class="form-control">
-                                    <option value="Homme">Homme</option>
-                                    <option value="Femme">Femme</option>
+                                <select id="sexe" name="sexe" class="form-control">
+                                    <option value="Homme" {{ Auth::user()->sexe == 'Homme' ? 'selected' : '' }}>Homme</option>
+                                    <option value="Femme" {{ Auth::user()->sexe == 'Femme' ? 'selected' : '' }}>Femme</option>
                                 </select>
                             </div>
                         </div>

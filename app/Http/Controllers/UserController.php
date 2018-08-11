@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 use Auth;
 use Image;
@@ -41,7 +42,11 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request)
+
     {
+
+
+
         $user = Auth::User();
         $user->fill([
             'nom' => $request['nom'],
@@ -81,6 +86,26 @@ class UserController extends Controller
 
         }
         return Redirect::back()->with('message', 'Modifié avec succes');
+    }
+
+    public function update_mdp(Request $request)
+    {
+        $this->validate(request(), [
+            'old_password' => 'required',
+            'password' => 'required|string|min:6|confirmed',
+        ]);
+
+        if (Hash::check($request['old_password'], Auth::user()->password)) {
+            Auth::user()->fill([
+                'password' => Hash::make(request()->input('password'))
+            ])->save();;
+            return Redirect::back()->with('success', 'Modifie avec succes');
+        }
+        else
+        {
+            return Redirect::back()->with('error', 'error');
+        }
+
     }
 
 }

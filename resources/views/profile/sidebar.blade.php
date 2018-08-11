@@ -6,11 +6,16 @@
         {{ $user->prenom }} {{ $user->nom }}
     </div>
 
-
+    @if(Auth::User()->id != $user->id)
     <div class="profile-button">
-        <button type="button" class="btn btn-success btn-sm">Ajouter</button>
-        <button type="button" class="btn btn-danger btn-sm">Contacter</button>
+
+                    <button type="submit" class="btn btn-success btn-sm">Ajouter</button>
+
+
+            <a href="{{route('conversations.show',$user->id)}}"><button type="button" class="btn btn-danger btn-sm">Contacter</button></a>
+
     </div>
+     @endif
 
 
 

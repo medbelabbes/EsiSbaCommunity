@@ -22,6 +22,7 @@ class CommentsController extends Controller
 
         Auth::User()->comment()->create([
             'content' => request('content'),
+            'vote' => request('vote'),
             'commentable_id' => request('commentable_id'),
             'commentable_type' => request('commentable_type'),
         ]);

@@ -11,8 +11,17 @@
 
             <input type="hidden" value="{{ $article->id }}" name="commentable_id">
             <input type="hidden" value="{{ 'App\Article' }}" name="commentable_type">
-            <input type="text" name="content" id="content" class="form-control" placeholder="Entrer votre commentaire">
-            <button type="submit" class="btn btn-primary">Commenter</button>
+
+            <input type="text" name="content" id="content" class="form-control" placeholder="Entrer votre commentaire" required>
+
+            <div class="vote radio-inline">
+                <input id="up" type="radio" name="vote" value="up" />
+                <label class="choice up" for="up"></label>
+                <input id="down" type="radio" name="vote" value="down" />
+                <label class="choice down"for="down"></label>
+            </div>
+
+            <button type="submit" class="btn btn-primary pull-right">Commenter</button>
 
         </form>
     </div>
@@ -31,8 +40,10 @@
     <div class="comment-img">
         <img src="/images/{{ $comment->user->photo }}" class="img-circle img-thumbnail"/>
     </div>
-    <div class="well">
-        <a href="{{ url('/profile/'.$comment->user->id) }}">
+    <div class="well " style="{{$comment->vote == 'up' ?
+                                'background-color : #2ab27b; color: #fff; ' : ($comment->vote == 'down' ?
+                                'background-color : #bf5329; color: #fff' : '')}}">
+        <a href="{{ url('/profile/'.$comment->user->id) }}" style="color: #333333">
             <b>{{ $comment->user->prenom }}</b>
         </a>
 

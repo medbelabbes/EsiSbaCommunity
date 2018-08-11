@@ -13,15 +13,13 @@
                     <div class="panel tab-content">
                         <!-- Information général -->
                         @include('profile/parametres/information')
-                    <!-- Information général -->
+                    <!-- Modifier photo -->
                         @include('profile/parametres/photo')
 
+                    <!-- Password -->
+                    @include('profile/parametres/password')
 
-
-
-                        <div role="tabpanel" class="tab-pane" id="mdp">...</div>
-
-                        <!-- Information général -->
+                        <!-- Invitation Mail -->
                         @include('profile/parametres/invitation')
 
 

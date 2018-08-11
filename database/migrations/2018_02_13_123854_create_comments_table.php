@@ -18,8 +18,8 @@ class CreateCommentsTable extends Migration
             $table->text('content');
             $table->string('commentable_type');
             $table->integer('commentable_id')->unsigned();
+            $table->string('vote')->default('neutre')->nullable();
             $table->integer('user_id')->unsigned();
-
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 

@@ -8,7 +8,7 @@ class Comment extends Model
 {
 
     protected $fillable = [
-        'content', 'commentable_type', 'commentable_id',
+        'content', 'vote','commentable_type', 'commentable_id',
     ];
 
     public function commentable()

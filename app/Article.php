@@ -8,7 +8,7 @@ class Article extends Model
 {
     public function user()
     {
-        return $this->belongsTo('App\User', 'foreign_key');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function comments()

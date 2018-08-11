@@ -41,7 +41,7 @@ class ArticlesController extends Controller
 public function store(Request $request)
     {
 
-        $this->validate($request,['titre'=>'required','content'=>'required']);
+        $this->validate($request,['titre'=>'required','content'=>'required|min:200']);
 
         $article = new Article;
         $article->titre = $request->input('titre');
